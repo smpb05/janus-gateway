@@ -5,14 +5,15 @@ services:
   # janus-gateway
   #
   janus-gateway:
-    image: 'smpb/ubuntu-janus'
+    # image: 'smpb/ubuntu-janus'
+    image: 'idjohnsilver/janus-ubuntu:1'
     command: ["/opt/janus/bin/janus", "-F", "/opt/janus/etc/janus"]
     ports:
       - "8188:8188"
       - "8088:8088"
       - "8089:8089"
       - "8889:8889"
-      - "8000:8000"
+      # - "8000:8000"
       - "7088:7088"
       - "7089:7089"
     volumes:
