@@ -6,7 +6,7 @@ services:
   #
   janus-gateway:
     # image: 'smpb/ubuntu-janus'
-    image: 'idjohnsilver/janus-ubuntu:1'
+    image: 'idjohnsilver/janus-ubuntu:3'
     command: ["/opt/janus/bin/janus", "-F", "/opt/janus/etc/janus"]
     ports:
       - "8188:8188"
@@ -19,4 +19,5 @@ services:
     volumes:
       - "C:/dev/docker-test/janus.jcfg:/opt/janus/etc/janus/janus.jcfg"
       - "C:/dev/docker-test/recordings/:/opt/janus/share/janus/recordings/"
+      - "C:/dev/docker-test/janus.log:/opt/janus/etc/janus.log"
     restart: always
