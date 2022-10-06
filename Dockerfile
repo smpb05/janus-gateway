@@ -2,16 +2,16 @@ FROM ubuntu:20.04
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y update && \
-	apt-get install -yq \
+    apt-get install -yq \
     build-essential \
-    git \ 
-    wget \ 
+    git \
+    wget \
     meson \
     libjansson-dev \
     libconfig-dev \
     libnice-dev \
     libssl-dev \
-    libsrtp2-dev \
+#    libsrtp2-dev \
     libusrsctp-dev \
     libmicrohttpd-dev \
     libwebsockets-dev \
@@ -22,7 +22,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     pkg-config \
     zlib1g-dev \
     libtool \
-    automake 
+    automake
 
 RUN mkdir -p /usr/src/janus-install
 
@@ -30,6 +30,7 @@ WORKDIR /usr/src/janus-install
 
 COPY . /usr/src/janus-install/
 
+RUN /usr/src/janus-install/scripts/libsrtp.sh
 RUN /usr/src/janus-install/scripts/janus.sh
 
 # EXPOSE 50000-56000/udp

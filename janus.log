@@ -62,3 +62,390 @@ Websockets server started (port 8188)...
 JANUS WebSockets transport plugin initialized!
 WebSockets thread started
 [31m[ERR][0m [transports/janus_http.c:janus_http_handler:1436] Invalid url /favicon.ico
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: stun1.l.google.com:19302
+  >> 74.125.24.127:19302 (IPv4)
+Testing STUN server: message is of 20 bytes
+  >> Our public address is 89.218.7.214
+TURN REST API backend: (disabled)
+Crypto: OpenSSL >= 1.1.0
+No cert/key specified, autogenerating some...
+Fingerprint of our certificate: 2C:D3:0B:AF:2E:F2:52:A3:64:75:91:D2:E9:E4:54:47:06:9C:90:AB:72:BF:72:9A:1E:B8:E4:EC:FB:F5:5B:2C
+Event handlers support disabled
+Plugins folder: /opt/janus/lib/janus/plugins
+Joining Janus requests handler thread
+Sessions watchdog started
+Loading plugin 'libjanus_voicemail.so'...
+JANUS VoiceMail plugin initialized!
+Loading plugin 'libjanus_audiobridge.so'...
+JANUS AudioBridge plugin initialized!
+Loading plugin 'libjanus_videocall.so'...
+JANUS VideoCall plugin initialized!
+Loading plugin 'libjanus_videoroom.so'...
+JANUS VideoRoom plugin initialized!
+Loading plugin 'libjanus_echotest.so'...
+JANUS EchoTest plugin initialized!
+Loading plugin 'libjanus_textroom.so'...
+JANUS TextRoom plugin initialized!
+Loading plugin 'libjanus_recordplay.so'...
+JANUS Record&Play plugin initialized!
+Loading plugin 'libjanus_nosip.so'...
+JANUS NoSIP plugin initialized!
+Loading plugin 'libjanus_streaming.so'...
+JANUS Streaming plugin initialized!
+Transport plugins folder: /opt/janus/lib/janus/transports
+Loading transport plugin 'libjanus_pfunix.so'...
+[33m[WARN][0m No Unix Sockets server started, giving up...
+[33m[WARN][0m The 'janus.transport.pfunix' plugin could not be initialized
+Loading transport plugin 'libjanus_http.so'...
+HTTP transport timer started
+HTTP webserver started (port 8088, /janus path listener)...
+JANUS REST (HTTP/HTTPS) transport plugin initialized!
+Loading transport plugin 'libjanus_websockets.so'...
+libwebsockets logging: 0
+Websockets server started (port 8188)...
+JANUS WebSockets transport plugin initialized!
+WebSockets thread started
+[31m[ERR][0m [transports/janus_http.c:janus_http_handler:1436] Invalid url /favicon.ico
+Stopping server, please wait...
+Ending sessions timeout watchdog...
+Sessions watchdog stopped
+Closing transport plugins:
+Stopping webserver(s)...
+JANUS REST (HTTP/HTTPS) transport plugin destroyed!
+WebSockets thread ended
+JANUS WebSockets transport plugin destroyed!
+Ending requests thread...
+Leaving Janus requests handler thread
+Destroying sessions...
+Freeing crypto resources...
+De-initializing SCTP...
+Closing plugins:
+JANUS AudioBridge plugin destroyed!
+JANUS Record&Play plugin destroyed!
+JANUS VideoRoom plugin destroyed!
+JANUS TextRoom plugin destroyed!
+JANUS NoSIP plugin destroyed!
+JANUS VoiceMail plugin destroyed!
+JANUS VideoCall plugin destroyed!
+JANUS EchoTest plugin destroyed!
+JANUS Streaming plugin destroyed!
+Closing event handlers:
+Bye!
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: 23.21.150.121:3478
+  >> 23.21.150.121:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+[35m[FATAL][0m [ice.c:janus_ice_test_stun_server:1095] No response to our STUN BINDING test
+[35m[FATAL][0m [janus.c:main:5074] Invalid STUN address 23.21.150.121:3478
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: 23.21.150.121:3478
+  >> 23.21.150.121:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+[35m[FATAL][0m [ice.c:janus_ice_test_stun_server:1095] No response to our STUN BINDING test
+[35m[FATAL][0m [janus.c:main:5074] Invalid STUN address 23.21.150.121:3478
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: 23.21.150.121:3478
+  >> 23.21.150.121:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+[35m[FATAL][0m [ice.c:janus_ice_test_stun_server:1095] No response to our STUN BINDING test
+[35m[FATAL][0m [janus.c:main:5074] Invalid STUN address 23.21.150.121:3478
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: 23.21.150.121:3478
+  >> 23.21.150.121:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+[35m[FATAL][0m [ice.c:janus_ice_test_stun_server:1095] No response to our STUN BINDING test
+[35m[FATAL][0m [janus.c:main:5074] Invalid STUN address 23.21.150.121:3478
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: 23.21.150.121:3478
+  >> 23.21.150.121:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+[35m[FATAL][0m [ice.c:janus_ice_test_stun_server:1095] No response to our STUN BINDING test
+[35m[FATAL][0m [janus.c:main:5074] Invalid STUN address 23.21.150.121:3478
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: stun1.l.google.com:19302
+Stopping server, please wait...
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: stun1.l.google.com:19302
+  >> 74.125.24.127:19302 (IPv4)
+Testing STUN server: message is of 20 bytes
+  >> Our public address is 89.218.7.214
+TURN REST API backend: (disabled)
+Crypto: OpenSSL >= 1.1.0
+No cert/key specified, autogenerating some...
+Fingerprint of our certificate: 1F:0B:CA:30:25:5B:66:36:FF:0E:33:09:F7:87:0B:92:30:21:31:9A:09:A6:B6:3E:F7:97:0C:FA:D6:A9:21:61
+Event handlers support disabled
+Plugins folder: /opt/janus/lib/janus/plugins
+Joining Janus requests handler thread
+Sessions watchdog started
+Loading plugin 'libjanus_voicemail.so'...
+JANUS VoiceMail plugin initialized!
+Loading plugin 'libjanus_audiobridge.so'...
+JANUS AudioBridge plugin initialized!
+Loading plugin 'libjanus_videocall.so'...
+JANUS VideoCall plugin initialized!
+Loading plugin 'libjanus_videoroom.so'...
+JANUS VideoRoom plugin initialized!
+Loading plugin 'libjanus_echotest.so'...
+JANUS EchoTest plugin initialized!
+Loading plugin 'libjanus_textroom.so'...
+JANUS TextRoom plugin initialized!
+Loading plugin 'libjanus_recordplay.so'...
+JANUS Record&Play plugin initialized!
+Loading plugin 'libjanus_nosip.so'...
+JANUS NoSIP plugin initialized!
+Loading plugin 'libjanus_streaming.so'...
+JANUS Streaming plugin initialized!
+Transport plugins folder: /opt/janus/lib/janus/transports
+Loading transport plugin 'libjanus_pfunix.so'...
+[33m[WARN][0m No Unix Sockets server started, giving up...
+[33m[WARN][0m The 'janus.transport.pfunix' plugin could not be initialized
+Loading transport plugin 'libjanus_http.so'...
+HTTP transport timer started
+HTTP webserver started (port 8088, /janus path listener)...
+JANUS REST (HTTP/HTTPS) transport plugin initialized!
+Loading transport plugin 'libjanus_websockets.so'...
+libwebsockets logging: 0
+Websockets server started (port 8188)...
+JANUS WebSockets transport plugin initialized!
+WebSockets thread started
+Stopping server, please wait...
+Ending sessions timeout watchdog...
+Sessions watchdog stopped
+Closing transport plugins:
+Stopping webserver(s)...
+JANUS REST (HTTP/HTTPS) transport plugin destroyed!
+WebSockets thread ended
+JANUS WebSockets transport plugin destroyed!
+Ending requests thread...
+Leaving Janus requests handler thread
+Destroying sessions...
+Freeing crypto resources...
+De-initializing SCTP...
+Closing plugins:
+JANUS AudioBridge plugin destroyed!
+JANUS Record&Play plugin destroyed!
+JANUS VideoRoom plugin destroyed!
+JANUS TextRoom plugin destroyed!
+JANUS NoSIP plugin destroyed!
+JANUS VoiceMail plugin destroyed!
+JANUS VideoCall plugin destroyed!
+JANUS EchoTest plugin destroyed!
+JANUS Streaming plugin destroyed!
+Closing event handlers:
+Bye!
+Logger plugins folder: /opt/janus/lib/janus/loggers
+[WARN] 	Couldn't access logger plugins folder...
+---------------------------------------------------
+  Starting Meetecho Janus (WebRTC Server) v1.1.0
+---------------------------------------------------
+
+Checking command line arguments...
+Debug/log level is 4
+Debug/log timestamps are disabled
+Debug/log colors are enabled
+Adding 'vmnet' to the ICE ignore list...
+Using 172.18.0.2 as local IP...
+Token based authentication disabled
+Initializing recorder code
+  -- Using temporary extension .tmp
+RTP port range: 30000 -- 31000
+Using nat_1_1_mapping for public IP: 185.102.74.250
+  -- Going to keep the private host too (separate candidates)
+Initializing ICE stuff (Full mode, ICE-TCP candidates disabled, full-trickle, IPv6 support disabled)
+ICE port range: 30000-31000
+STUN server to use: stun.12voip.com:3478
+  >> 77.72.169.213:3478 (IPv4)
+Testing STUN server: message is of 20 bytes
+  >> Our public address is 89.218.7.214
+TURN REST API backend: (disabled)
+Crypto: OpenSSL >= 1.1.0
+No cert/key specified, autogenerating some...
+Fingerprint of our certificate: 40:6E:D0:0C:2A:1F:F1:80:57:09:7B:34:9E:A8:EE:93:5B:F7:C6:E4:EB:33:A0:E0:62:A0:DF:FA:E0:D3:F9:5C
+Event handlers support disabled
+Plugins folder: /opt/janus/lib/janus/plugins
+Sessions watchdog started
+Joining Janus requests handler thread
+Loading plugin 'libjanus_voicemail.so'...
+JANUS VoiceMail plugin initialized!
+Loading plugin 'libjanus_audiobridge.so'...
+JANUS AudioBridge plugin initialized!
+Loading plugin 'libjanus_videocall.so'...
+JANUS VideoCall plugin initialized!
+Loading plugin 'libjanus_videoroom.so'...
+JANUS VideoRoom plugin initialized!
+Loading plugin 'libjanus_echotest.so'...
+JANUS EchoTest plugin initialized!
+Loading plugin 'libjanus_textroom.so'...
+JANUS TextRoom plugin initialized!
+Loading plugin 'libjanus_recordplay.so'...
+JANUS Record&Play plugin initialized!
+Loading plugin 'libjanus_nosip.so'...
+JANUS NoSIP plugin initialized!
+Loading plugin 'libjanus_streaming.so'...
+JANUS Streaming plugin initialized!
+Transport plugins folder: /opt/janus/lib/janus/transports
+Loading transport plugin 'libjanus_pfunix.so'...
+[33m[WARN][0m No Unix Sockets server started, giving up...
+[33m[WARN][0m The 'janus.transport.pfunix' plugin could not be initialized
+Loading transport plugin 'libjanus_http.so'...
+HTTP transport timer started
+HTTP webserver started (port 8088, /janus path listener)...
+JANUS REST (HTTP/HTTPS) transport plugin initialized!
+Loading transport plugin 'libjanus_websockets.so'...
+libwebsockets logging: 0
+Websockets server started (port 8188)...
+JANUS WebSockets transport plugin initialized!
+WebSockets thread started
