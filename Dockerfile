@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-
+# install all dependencies
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y update && \
     apt-get install -yq \
@@ -11,7 +11,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     libconfig-dev \
     libnice-dev \
     libssl-dev \
-#    libsrtp2-dev \
     libusrsctp-dev \
     libmicrohttpd-dev \
     libwebsockets-dev \
@@ -22,22 +21,17 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     pkg-config \
     zlib1g-dev \
     libtool \
-    automake
+    libavutil-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    automake && \ 
+    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/janus-install
 
 WORKDIR /usr/src/janus-install
 
-COPY . /usr/src/janus-install/
+COPY scripts /usr/src/janus-install/scripts
 
 RUN /usr/src/janus-install/scripts/libsrtp.sh
 RUN /usr/src/janus-install/scripts/janus.sh
-
-# EXPOSE 50000-56000/udp
-# EXPOSE 8188
-# EXPOSE 8088
-# EXPOSE 8089
-# EXPOSE 8889
-# EXPOSE 8000
-# EXPOSE 7088
-# EXPOSE 7089
