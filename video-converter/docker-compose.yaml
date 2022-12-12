@@ -1,0 +1,28 @@
+version: '2.1'
+services:
+  redis:
+    network_mode: host
+    image: 'redis'
+    volumes:
+      - "C:/dev/nodejs-videoconverter/redis.conf:/usr/local/etc/redis/redis.conf"
+    ports:
+      - "6379:6379"
+  janus-gateway:
+    network_mode: host
+    image: 'video-converter'
+    depends_on:
+      - redis
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        cron
+        npm start
+    ports:
+      - "3000:5000"
+    volumes:
+      - "C:/dev/nodejs-videoconverter/config.js:/usr/src/app/config.js"
+      - "C:/dev/nodejs-videoconverter/storage/:/usr/src/app/storage/"
+      - "C:/dev/nodejs-videoconverter/recordings/:/usr/src/app/recordings/"
+      - "C:/dev/nodejs-videoconverter/public/:/usr/src/app/public/"
+    restart: always

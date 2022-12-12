@@ -1,20 +1,45 @@
-version: '2.1'
+version: '3.0'
 services:
   janus-gateway:
     network_mode: host
+    build: ./janus
     image: 'janus-gateway'
     command: ["/opt/janus/bin/janus", "-F", "/opt/janus/etc/janus"]
-    ports:
-    #   - "8188:8188"
-      # - "8088:8088"
-    #   - "8089:8089"
-    #   - "8889:8889"
-    #   - "8000:8000"
-    #   - "7088:7088"
-    #   - "7089:7089"
+    # ports:
+    #   - "8088:8088"
     #   - "50000-56000:50000-56000/udp"
     volumes:
-      - "C:/dev/docker-test/janus.jcfg:/opt/janus/etc/janus/janus.jcfg"
-      - "C:/dev/docker-test/recordings/:/opt/janus/share/janus/recordings/"
+      - "C:/dev/janus-gateway/janus/janus.jcfg:/opt/janus/etc/janus/janus.jcfg"
+      - "C:/dev/janus-gateway/janus/recordings/:/opt/janus/share/janus/recordings/"
       # - "C:/dev/docker-test/janus.log:/opt/janus/janus.log"
+    restart: always
+
+  redis:
+    network_mode: host
+    image: 'redis'
+    volumes:
+      - "C:/dev/janus-gateway/video-converter/redis.conf:/usr/local/etc/redis/redis.conf"
+    # ports:
+    #   - "6379:6379"
+    restart: always
+
+  video-converter:
+    network_mode: host
+    build: ./video-converter
+    image: 'video-converter'
+    depends_on:
+      - redis
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        cron
+        npm start
+    # ports:
+    #   - "3000:5000"
+    volumes:
+      - "C:/dev/janus-gateway/video-converter/config.js:/usr/src/app/config.js"
+      - "C:/dev/janus-gateway/video-converter/storage/:/usr/src/app/storage/"
+      - "C:/dev/janus-gateway/video-converter/recordings/:/usr/src/app/recordings/"
+      - "C:/dev/janus-gateway/video-converter/public/:/usr/src/app/public/"
     restart: always
