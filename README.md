@@ -25,6 +25,6 @@
 use "host" network_mode for production - docker has problems with large port range
 https://github.com/instrumentisto/coturn-docker-image/issues/3
 
-### docker-compose
+### run via docker-compose
 - ```docker-compose build``` to build all images
 - ```docker-compose up``` to run all containers
