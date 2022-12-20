@@ -5,6 +5,7 @@ services:
     build: ./janus
     image: 'janus-gateway'
     command: ["/opt/janus/bin/janus", "-F", "/opt/janus/etc/janus"]
+    # конфигурация портов работает только для network_mode: "bridge", игнорируется в при использовании "host" 
     # ports:
     #   - "8088:8088"
     #   - "50000-56000:50000-56000/udp"
@@ -18,12 +19,14 @@ services:
     network_mode: host
     image: 'redis'
     volumes:
+      # файл конфигурации для redis
       - "C:/dev/janus-gateway/video-converter/redis.conf:/usr/local/etc/redis/redis.conf"
     # ports:
     #   - "6379:6379"
     restart: always
 
   video-converter:
+    # для локальной разработки на windows нужно использовать network_mode "bridge"
     network_mode: host
     build: ./video-converter
     image: 'video-converter'
@@ -38,8 +41,14 @@ services:
     # ports:
     #   - "3000:5000"
     volumes:
+      # файл конфигурации для приложения конвертера на nodejs
       - "C:/dev/janus-gateway/video-converter/config.js:/usr/src/app/config.js"
+      # локальная директория с видеозаписями Janus, где лежат файлы .mjr
       - "C:/dev/janus-gateway/video-converter/storage/:/usr/src/app/storage/"
+      # локальная директория с куда будут складываться конвертированные файлы
       - "C:/dev/janus-gateway/video-converter/recordings/:/usr/src/app/recordings/"
+      # директория со static контентом видеоконвертера, сюда необходимо поместить плеер
+      # плеер будет доступен по адресу, где запущено приложение конвертера 
+      # http://{CONVERTER_BASE_URL}/static/player.html
       - "C:/dev/janus-gateway/video-converter/public/:/usr/src/app/public/"
     restart: always
