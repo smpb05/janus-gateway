@@ -37,6 +37,15 @@ export interface IFilesToConcat {
     user: number,
 }
 
+export interface RoomFileInterface {
+    fileName: string;
+    size: number;
+    created: string;
+}
+
+export interface RoomDataInterface {
+    list: RoomFileInterface[]
+}
 /**
  * Get original files from folder with name {id}, sort them by time, and arrange in groups for mixing
  * @param {*} id 
@@ -155,5 +164,32 @@ export async function checkForProcessedFile(id: number): Promise<IVideoFilePathI
     }
     return new Promise((resolve) => {
         resolve(files);
+    });
+}
+
+/**
+ * Get files in room folder
+ * @param id Room id.
+ */
+export async function getFilesInRoom (id: number): Promise<RoomDataInterface> {
+    console.log(`:: GET FILES FROM ROOM ${id}`);
+    const path = config.videosBaseDir + id;
+    const files = await fs.promises.readdir(path);
+    const stats = await Promise.all(files.map((file) => fs.promises.stat(`${path}/${file}`)));
+
+    const roomData: RoomFileInterface[] = files.map((file, index) => {
+        const { size, birthtimeMs } = stats[index];
+        const createdDate = new Date(birthtimeMs);
+        const created = createdDate.toLocaleString('ru-RU');
+
+        return {
+            fileName: file,
+            size,
+            created,
+        };
+    });
+
+    return new Promise((resolve) => {
+        resolve({list: roomData});
     });
 }
