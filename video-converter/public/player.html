@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en" style="height: 100%;">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <title>VideoKZ Player</title>
+  </head>
+  <body class="d-flex justify-content-center h-100" style="background-color: #333333; align-items: center;">
+    
+    <div id="divProgress" style="text-align: center;">
+        <!-- MAIN SECTION -->
+        <h1 id="txtProgressTitle" class="display-1 text-white">Подготовка видео...</h1>
+        <h1 id="txtProgressDesc" class="display-6 text-white">Проверка статуса готовности видео на сервере</h1>
+
+        <!--  -->
+
+        <!-- STATE: ACTIVE -->
+        <p id="txtDontReload" class="lead text-white mt-5" style="display: none;">Пожалуйста не перезагружайте страницу. 
+          После завершения обработки плеер откроется автоматически
+        </p>
+
+        <!-- STATE: FAILED -->
+        <p id="txtErrorMessage" class="lead text-white mt-5" style="display: none;" />
+        <div id="divForceConversion" style="display: none;">
+          <button type="button" class="btn btn-outline-light" onclick="forceConversion()">Перезапустить конвертацию</button>
+        </div>
+
+        <!-- NOT FOUND SECTION -->
+        <p id="txtNotFound" class="lead text-white mt-5" style="display: none;">Не волнуйтесь, возможно записи ещё не успели поступить на сервер обработки. <br/> 
+          <a href="mailto:mikhail@smartex.kz?subject=Records Not Found" class="text-white">Напишите нам</a> и мы обязательно разберёмся в сложившейся ситуации.
+          <br/>В теле письма укажите код комнаты и вложите скриншот экрана
+        </p>
+
+        <!-- MIXED VIDEOS SECTION -->
+        <div id="divMixedVideos" class="mt-5" style="display: none; align-items: center;">
+          <hr style="width:50%; color: aliceblue; margin: auto;" />  
+          <p class="lead text-white mt-5">Файлы, которые мы успели обработать на данный момент:</p>
+          <ul id="lstMixedVideos" class="lead text-white mt-5" style="margin: 0 auto; display: table;" />
+        </div>
+        
+    </div>
+
+    <!-- PLAYER SECTION -->
+    <div id="divVideo" style="width:100%; display: none;">        
+        <video id="videoPlayer" width="100%" controls>
+            <source src="" />
+            Браузер не поддерживает воспроизведение видео
+        </video>
+    </div>
+    
+    <!-- Optional JavaScript; -->
+    <script src="./config.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/player.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
