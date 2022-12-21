@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express();
 const Queue = require('bull');
 const config = require('./config');
-import { getFilesForMixing, checkForProcessedFile, getMixedFiles } from './tools/file-utils';
+import { getFilesForMixing, checkForProcessedFile, getMixedFiles, getFilesInRoom } from './tools/file-utils';
 const pjson = require('./package.json');
 const url = require('url');
 const monitoro = require('monitoro');
@@ -97,6 +97,14 @@ app.get('/job/:id', async (req, res) => {
         let reason = job.failedReason;
         res.json({ id, state, progress, reason, position });
     }
+});
+
+/**
+ * Get files in room
+ */
+app.get('/call/filelist/:id', async (req, res) => {
+    const files = await getFilesInRoom(req.params.id)
+    res.json(files);
 });
 
 /**
