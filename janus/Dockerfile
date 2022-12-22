@@ -37,5 +37,5 @@ COPY scripts /usr/src/janus-install/scripts
 RUN dos2unix /usr/src/janus-install/scripts/libsrtp.sh
 RUN dos2unix /usr/src/janus-install/scripts/janus.sh
 
-RUN /usr/src/janus-install/scripts/libsrtp.sh
-RUN /usr/src/janus-install/scripts/janus.sh
+RUN chmod a+rx /usr/src/janus-install/scripts/libsrtp.sh
+RUN chmod a+rx /usr/src/janus-install/scripts/janus.sh
