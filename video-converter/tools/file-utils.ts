@@ -1,5 +1,6 @@
 import * as config from "../config";
 import * as fs from "fs";
+import * as ffmpeg from 'fluent-ffmpeg'
 
 // TODO: Refactor boilerplating for file search in dirs
 
@@ -46,6 +47,21 @@ export interface RoomFileInterface {
 export interface RoomDataInterface {
     list: RoomFileInterface[]
 }
+
+export interface VideoDurationErrorDataInterface {
+    message: string;
+}
+
+export interface VideoDurationDataInterface {
+    filename: string;
+    duration: number
+}
+
+export interface VideoDurationinterface {
+    status: 'OK' | 'ERROR',
+    data: VideoDurationErrorDataInterface | VideoDurationDataInterface
+}
+
 /**
  * Get original files from folder with name {id}, sort them by time, and arrange in groups for mixing
  * @param {*} id 
@@ -191,5 +207,56 @@ export async function getFilesInRoom (id: number): Promise<RoomDataInterface> {
 
     return new Promise((resolve) => {
         resolve({list: roomData});
+    });
+}
+
+/**
+ * Retrieve metadata for media file (duration, width, height, etc)
+ * @param {*} filePath 
+ */
+function getMetadata(filePath): Promise<ffmpeg.FfprobeData> {
+    return new Promise((resolve, reject) => {
+        ffmpeg.ffprobe(filePath, (err, metadata) => {
+            if(err) reject(err);
+            resolve(metadata);
+        });
+    });
+}
+
+/**
+ * Get files in room folder
+ * @param id Room id.
+ * @param filename filename should be provided with extension
+ */
+export async function getVideoDuration (id: number, filename?: string): Promise<VideoDurationinterface> {
+    console.log(`:: GET VIDEO DURATION BY ID: ${id}`);
+    const pathToDir = config.videosBaseDir + id;
+    const name = filename || `${id}.mkv`;
+    const pathToVideo = `${pathToDir}/${name}`;
+    let duration = 0;
+    let errorMessage = '';
+
+    try {
+        const metaData = await getMetadata(pathToVideo);
+        if(!metaData.format.duration) throw Error('Could not get video duration');
+        
+        duration = metaData.format.duration;
+    } catch (error) {
+        errorMessage = error.message;    
+    }
+
+    const errorData = {
+        message: errorMessage,
+    };
+    const videoData = {
+        filename: name,
+        duration,
+    }
+
+    return new Promise((resolve) => {
+        resolve({
+            status: errorMessage ? 'ERROR' : 'OK',
+            data: errorMessage ? errorData : videoData,
+        });
     });
 }
