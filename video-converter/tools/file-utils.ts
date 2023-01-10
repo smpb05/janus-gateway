@@ -82,8 +82,9 @@ export async function getFilesForMixing(id: number): Promise<IVideoGroupForMixin
 
     let results: IVideoGroupForMixing[] = [];
     for (let i = 0; i < sortedFiles.length - 1; i++) {
-
-        if ((sortedFiles[i + 1].user == sortedFiles[i].user) && (sortedFiles[i + 1].time == sortedFiles[i].time)) {
+        // TODO: should check files for same duration and align it
+        // (sortedFiles[i + 1].time == sortedFiles[i].time)
+        if (sortedFiles[i + 1].user == sortedFiles[i].user) {
             results.push({
                 user: sortedFiles[i].user,
                 fileA: sortedFiles[i],
